@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_every-common" default="compile.module.every-common">
+  <dirname property="module.every-common.basedir" file="${ant.file.module_every-common}"/>
+  
+  <property name="module.jdk.home.every-common" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.every-common" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.every-common" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.every-common" value="-encoding UTF-8 -source 8 -target 1.8 ${compiler.args}"/>
+  
+  <property name="every-common.output.dir" value="${module.every-common.basedir}/../../../../../../austin/Dev_Env/Project/gitProject/every/every-common/target/classes"/>
+  <property name="every-common.testoutput.dir" value="${module.every-common.basedir}/../../../../../../austin/Dev_Env/Project/gitProject/every/every-common/target/test-classes"/>
+  
+  <path id="every-common.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="every-common.module.production.classpath">
+    <path refid="${module.jdk.classpath.every-common}"/>
+    <pathelement location="${jdbc.output.dir}"/>
+    <pathelement location="${framework.output.dir}"/>
+    <path refid="library.maven:_com.baomidou:mybatisplus-spring-boot-starter:1.0.5.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:6.0.6.classpath"/>
+    <path refid="library.maven:_com.alibaba:druid:1.1.5.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus:2.1.6.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-configuration-processor:1.5.7.release.classpath"/>
+    <path refid="library.maven:_com.vaadin.external.google:android-json:0.0.20131108.vaadin1.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-jdbc:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.5.7.release.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat:tomcat-jdbc:8.5.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat:tomcat-juli:8.5.20.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.3.11.release.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-support:2.1.6.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-core:2.1.6.classpath"/>
+    <path refid="library.maven:_com.github.jsqlparser:jsqlparser:1.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.5.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-generate:2.1.6.classpath"/>
+  </path>
+  
+  <path id="every-common.runtime.production.module.classpath">
+    <pathelement location="${every-common.output.dir}"/>
+    <path refid="jdbc.runtime.production.module.classpath"/>
+    <path refid="framework.runtime.production.module.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatisplus-spring-boot-starter:1.0.5.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:6.0.6.classpath"/>
+    <path refid="library.maven:_com.alibaba:druid:1.1.5.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus:2.1.6.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-configuration-processor:1.5.7.release.classpath"/>
+    <path refid="library.maven:_com.vaadin.external.google:android-json:0.0.20131108.vaadin1.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-jdbc:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.5.7.release.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.yaml:snakeyaml:1.17.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat:tomcat-jdbc:8.5.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat:tomcat-juli:8.5.20.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.3.11.release.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-support:2.1.6.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-core:2.1.6.classpath"/>
+    <path refid="library.maven:_com.github.jsqlparser:jsqlparser:1.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.5.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-generate:2.1.6.classpath"/>
+  </path>
+  
+  <path id="every-common.module.classpath">
+    <path refid="${module.jdk.classpath.every-common}"/>
+    <pathelement location="${every-common.output.dir}"/>
+    <pathelement location="${jdbc.testoutput.dir}"/>
+    <pathelement location="${jdbc.output.dir}"/>
+    <pathelement location="${framework.testoutput.dir}"/>
+    <pathelement location="${framework.output.dir}"/>
+    <path refid="library.maven:_com.baomidou:mybatisplus-spring-boot-starter:1.0.5.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:6.0.6.classpath"/>
+    <path refid="library.maven:_com.alibaba:druid:1.1.5.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus:2.1.6.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-configuration-processor:1.5.7.release.classpath"/>
+    <path refid="library.maven:_com.vaadin.external.google:android-json:0.0.20131108.vaadin1.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-jdbc:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.5.7.release.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.yaml:snakeyaml:1.17.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat:tomcat-jdbc:8.5.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat:tomcat-juli:8.5.20.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.3.11.release.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-support:2.1.6.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-core:2.1.6.classpath"/>
+    <path refid="library.maven:_com.github.jsqlparser:jsqlparser:1.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.5.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-generate:2.1.6.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+  </path>
+  
+  <path id="every-common.runtime.module.classpath">
+    <pathelement location="${every-common.testoutput.dir}"/>
+    <pathelement location="${every-common.output.dir}"/>
+    <path refid="jdbc.runtime.module.classpath"/>
+    <path refid="framework.runtime.module.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatisplus-spring-boot-starter:1.0.5.classpath"/>
+    <path refid="library.maven:_mysql:mysql-connector-java:6.0.6.classpath"/>
+    <path refid="library.maven:_com.alibaba:druid:1.1.5.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus:2.1.6.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-autoconfigure:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-core:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-context:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-aop:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-beans:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-expression:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-configuration-processor:1.5.7.release.classpath"/>
+    <path refid="library.maven:_com.vaadin.external.google:android-json:0.0.20131108.vaadin1.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-jdbc:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter:1.5.7.release.classpath"/>
+    <path refid="library.maven:_org.springframework.boot:spring-boot-starter-logging:1.5.7.release.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-classic:1.1.11.classpath"/>
+    <path refid="library.maven:_ch.qos.logback:logback-core:1.1.11.classpath"/>
+    <path refid="library.maven:_org.slf4j:slf4j-api:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jcl-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:jul-to-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.slf4j:log4j-over-slf4j:1.7.25.classpath"/>
+    <path refid="library.maven:_org.yaml:snakeyaml:1.17.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat:tomcat-jdbc:8.5.20.classpath"/>
+    <path refid="library.maven:_org.apache.tomcat:tomcat-juli:8.5.20.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-jdbc:4.3.11.release.classpath"/>
+    <path refid="library.maven:_org.springframework:spring-tx:4.3.11.release.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-support:2.1.6.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-core:2.1.6.classpath"/>
+    <path refid="library.maven:_com.github.jsqlparser:jsqlparser:1.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis-spring:1.3.1.classpath"/>
+    <path refid="library.maven:_org.mybatis:mybatis:3.4.5.classpath"/>
+    <path refid="library.maven:_com.baomidou:mybatis-plus-generate:2.1.6.classpath"/>
+    <path refid="library.maven:_junit:junit:4.12.classpath"/>
+    <path refid="library.maven:_org.hamcrest:hamcrest-core:1.3.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.every-common">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.every-common">
+    <patternset refid="excluded.from.module.every-common"/>
+  </patternset>
+  
+  <path id="every-common.module.sourcepath">
+    <dirset dir="${module.every-common.basedir}/../../../../../../austin/Dev_Env/Project/gitProject/every/every-common">
+      <include name="src/main/java"/>
+      <include name="src/main/resources"/>
+    </dirset>
+  </path>
+  
+  <path id="every-common.module.test.sourcepath">
+    <dirset dir="${module.every-common.basedir}/../../../../../../austin/Dev_Env/Project/gitProject/every/every-common">
+      <include name="src/test/java"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.every-common" depends="compile.module.every-common.production,compile.module.every-common.tests" description="Compile module every-common"/>
+  
+  <target name="compile.module.every-common.production" depends="register.custom.compilers,compile.module.jdbc,compile.module.framework" description="Compile module every-common; production classes">
+    <mkdir dir="${every-common.output.dir}"/>
+    <javac2 destdir="${every-common.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.every-common}/javac">
+      <compilerarg line="${compiler.args.every-common}"/>
+      <bootclasspath refid="every-common.module.bootclasspath"/>
+      <classpath refid="every-common.module.production.classpath"/>
+      <src refid="every-common.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.every-common"/>
+    </javac2>
+    
+    <copy todir="${every-common.output.dir}">
+      <fileset dir="${module.every-common.basedir}/../../../../../../austin/Dev_Env/Project/gitProject/every/every-common/src/main/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+      <fileset dir="${module.every-common.basedir}/../../../../../../austin/Dev_Env/Project/gitProject/every/every-common/src/main/resources">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.every-common.tests" depends="register.custom.compilers,compile.module.every-common.production" description="compile module every-common; test classes" unless="skip.tests">
+    <mkdir dir="${every-common.testoutput.dir}"/>
+    <javac2 destdir="${every-common.testoutput.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.every-common}/javac">
+      <compilerarg line="${compiler.args.every-common}"/>
+      <bootclasspath refid="every-common.module.bootclasspath"/>
+      <classpath refid="every-common.module.classpath"/>
+      <src refid="every-common.module.test.sourcepath"/>
+      <patternset refid="excluded.from.compilation.every-common"/>
+    </javac2>
+    
+    <copy todir="${every-common.testoutput.dir}">
+      <fileset dir="${module.every-common.basedir}/../../../../../../austin/Dev_Env/Project/gitProject/every/every-common/src/test/java">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="clean.module.every-common" description="cleanup module">
+    <delete dir="${every-common.output.dir}"/>
+    <delete dir="${every-common.testoutput.dir}"/>
+  </target>
+</project>
