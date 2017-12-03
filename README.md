@@ -15,8 +15,9 @@
 2. event
 3. util
 4. thread
-4. common --> exceptions, utils
+4. framework --> exceptions, utils
 5. http
+6. every-common
 
 
 #### 尝试
